@@ -1,6 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NelayanController;
+use app\models\NelayanModel;
+use App\Http\Controllers\KonsumenController;
+use app\models\KonsumenModel;
+use App\Http\Controllers\MitraController;
+use app\models\MitraModel;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +22,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout.v_template');
+    return view('v_admin');
 });
+
+
+Route::get('/nelayan',[NelayanController::class,'index'])->name('nelayan');
