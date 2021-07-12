@@ -41,3 +41,11 @@ Route::post('/konsumen/insert',[KonsumenController::class,'insert']);
 Route::get('/konsumen/edit/{id_konsumen}',[KonsumenController::class,'edit']);
 Route::post('/konsumen/update/{id_konsumen}',[KonsumenController::class,'update']);
 Route::get('/konsumen/delete/{id_konsumen}',[KonsumenController::class,'delete']);
+
+Route::get('/mitra',[MitraController::class,'index'])->name('mitra');
+Route::get('/mitra/detail/{id_mitra}',[MitraController::class,'detail']);
+Route::get('/mitra/add',[MitraController::class,'add']);
+Route::post('/mitra/insert',[MitraController::class,'insert']);
+Route::get('/mitra/edit/{id_mitra}',[MitraController::class,'edit']);
+Route::post('/mitra/update/{id_mitra}',[MitraController::class,'update']);
+Route::get('/mitra/delete/{id_mitra}',[MitraController::class,'delete']);

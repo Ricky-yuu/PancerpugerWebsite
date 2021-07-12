@@ -25,4 +25,9 @@ class MitraModel extends Model
     {
         DB::table('tb_mitra')->where('id_mitra', $id_mitra)->update($data);
     }
+    public function deletedata($id_mitra)
+    {
+        DB::table('tb_mitra')->where('id_mitra', $id_mitra)->delete();
+    }
+
 }
