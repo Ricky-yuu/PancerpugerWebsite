@@ -27,3 +27,8 @@ Route::get('/', function () {
 
 
 Route::get('/nelayan',[NelayanController::class,'index'])->name('nelayan');
+Route::get('/nelayan/detail/{id_nelayan}',[NelayanController::class,'detail']);
+Route::get('/nelayan/add',[NelayanController::class,'add']);
+Route::post('/nelayan/insert',[NelayanController::class,'insert']);
+Route::get('/nelayan/edit/{id_nelayan}',[NelayanController::class,'edit']);
+Route::post('/nelayan/update/{id_nelayan}',[NelayanController::class,'update']);
