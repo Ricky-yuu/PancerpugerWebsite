@@ -54,31 +54,41 @@
                         <td>
                             <a href="/nelayan/detail/{{ $data->id_nelayan}}" class="btn btn-sn. btn-success">Detail</a>
                             <a href="/nelayan/edit/{{ $data->id_nelayan}}" class="btn btn-sn. btn-warning">Edit</a>
-                           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete">
-                              Delete</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ $data->id_nelayan}}">
+                                Delete
+                              </button>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-        <div class="modal" tabindex="-1" id="delete">
+
+
+        @foreach ($nelayan as $data) 
+            
+        <div class="modal modal-danger fade" id="delete{{ $data->id_nelayan}}">
             <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Modal title</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">{{$data->nama_nelayan}}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Apakan anda yakin ingin menghapus data ini...?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">No</button>
+                            <a href="/nelayan/delete/{{ $data->id_nelayan}}" class="btn btn-outline">Yes</a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
                 </div>
-                <div class="modal-body">
-                  <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
+                <!-- /.modal-dialog -->
             </div>
-          </div>
-    </div>
+            @endforeach
+            
+        </div>
 
      
 </body>

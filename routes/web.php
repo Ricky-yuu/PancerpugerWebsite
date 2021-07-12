@@ -32,3 +32,4 @@ Route::get('/nelayan/add',[NelayanController::class,'add']);
 Route::post('/nelayan/insert',[NelayanController::class,'insert']);
 Route::get('/nelayan/edit/{id_nelayan}',[NelayanController::class,'edit']);
 Route::post('/nelayan/update/{id_nelayan}',[NelayanController::class,'update']);
+Route::get('/nelayan/delete/{id_nelayan}',[NelayanController::class,'delete']);

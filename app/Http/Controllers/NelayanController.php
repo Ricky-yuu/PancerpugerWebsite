@@ -135,4 +135,16 @@ class NelayanController extends Controller
 
        
     }
+
+    public function delete($id_nelayan)
+    {
+        //hapus foto 
+        $nelayan = $this->NelayanModel->detaildata($id_nelayan);
+        if ($nelayan->foto_nelayan <> "") {
+            unlink(public_path('foto_nelayan').'/'.$nelayan->foto_nelayan);
+        }
+        $this->NelayanModel->deletedata($id_nelayan);  
+        return redirect()->route('nelayan')->with('pesan','data berhasil dihapus');
+     
+    }
 }

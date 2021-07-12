@@ -25,4 +25,9 @@ class NelayanModel extends Model
     {
         DB::table('tb_nelayan')->where('id_nelayan', $id_nelayan)->update($data);
     }
+    public function deletedata($id_nelayan)
+    {
+        DB::table('tb_nelayan')->where('id_nelayan', $id_nelayan)->delete();
+    }
+
 }
