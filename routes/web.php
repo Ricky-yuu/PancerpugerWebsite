@@ -33,3 +33,11 @@ Route::post('/nelayan/insert',[NelayanController::class,'insert']);
 Route::get('/nelayan/edit/{id_nelayan}',[NelayanController::class,'edit']);
 Route::post('/nelayan/update/{id_nelayan}',[NelayanController::class,'update']);
 Route::get('/nelayan/delete/{id_nelayan}',[NelayanController::class,'delete']);
+
+Route::get('/konsumen',[KonsumenController::class,'index'])->name('konsumen');
+Route::get('/konsumen/detail/{id_konsumen}',[KonsumenController::class,'detail']);
+Route::get('/konsumen/add',[KonsumenController::class,'add']);
+Route::post('/konsumen/insert',[KonsumenController::class,'insert']);
+Route::get('/konsumen/edit/{id_konsumen}',[KonsumenController::class,'edit']);
+Route::post('/konsumen/update/{id_konsumen}',[KonsumenController::class,'update']);
+Route::get('/konsumen/delete/{id_konsumen}',[KonsumenController::class,'delete']);

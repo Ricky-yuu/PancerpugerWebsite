@@ -25,5 +25,10 @@ class KonsumenModel extends Model
     {
         DB::table('tb_konsumen')->where('id_konsumen', $id_konsumen)->update($data);
     }
+    public function deletedata($id_konsumen)
+    {
+        DB::table('tb_konsumen')->where('id_konsumen', $id_konsumen)->delete();
+    }
+
 }
 
